@@ -442,7 +442,7 @@ The method returns a `ReceivePort` that can be used to receive messages from `ch
 
 Each consumer strand will use its own `ticker-consumer`, and each can consume messages at its own pace, and each `TickerChannelConsumer` port will return the same messages (messages consumed from one will not be removed from the other views), subject possibly to different messages being missed by different consumers depending on their pace.
 
-#### Transofrming Channels (AKA Reactive Extensions)
+#### Transforming Channels (AKA Reactive Extensions)
 
 The [`Channels`]({{javadoc}}/strands/channels/Channels.html) class has several static methods that can be used to manipulate and compose values sent to or received off channels:
 
@@ -495,7 +495,7 @@ Delay variables, delayed values, or dataflow variables (represented by the [`Del
 
 {% capture javadoc %}{{site.baseurl}}/javadoc/co/paralleluniverse{% endcapture %}
 
-To use the terms we've learned so far, an *actor* is a strand that owns a single channel with some added lifecyce management and error handling. But this reductionist view of actors does them little justice. Actors are fundamental building blocks that are combined to build a fault-tolerant application. If you are familiar with Erlang, Quasar actors are just like Erlang processes.
+To use the terms we've learned so far, an *actor* is a strand that owns a single channel with some added lifecycle management and error handling. But this reductionist view of actors does them little justice. Actors are fundamental building blocks that are combined to build a fault-tolerant application. If you are familiar with Erlang, Quasar actors are just like Erlang processes.
 
 An actor is a self-contained execution unit with well-defined inputs and outputs. Actors communicate with other actors (as well as regular program threads and fibers) by passing messages.
 
