@@ -98,7 +98,7 @@ public class OOTest {
         }
     }
 
-    class object : DerivedDerived2(), BaseTrait1 {
+    default object : DerivedDerived2(), BaseTrait1 {
         override Suspendable fun doSleep() {
             super<DerivedDerived2>.doSleep()
         }

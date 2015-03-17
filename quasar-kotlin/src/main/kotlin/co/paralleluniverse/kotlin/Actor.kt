@@ -16,12 +16,12 @@ import co.paralleluniverse.strands.SuspendableCallable
  * @author circlespainter
  */
 public abstract class Actor<Message, V> : KotlinActorSupport<Message, V>() {
-    public class object {
+    public default object {
         private object DeferException : Exception()
         public object Timeout
     }
 
-    protected var currentMessage: Message? = null
+    protected var currentMessage: Message = null
 
     /**
      * Higher-order selective receive
@@ -117,7 +117,7 @@ public abstract class Actor<Message, V> : KotlinActorSupport<Message, V>() {
 // A couple of top-level utils
 
 Suspendable public fun spawn(a: JActor<*, *>): ActorRef<*> {
-    Fiber(a as SuspendableCallable<Object>).start()
+    Fiber(a as SuspendableCallable<Any>).start()
     return a.ref()
 }
 

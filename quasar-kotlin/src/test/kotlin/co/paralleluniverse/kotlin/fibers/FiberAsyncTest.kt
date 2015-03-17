@@ -96,7 +96,7 @@ public class FiberAsyncTest {
         }
     }
 
-    class object {
+    default object {
         Suspendable fun callService(service: Service): String {
             return object : MyFiberAsync() {
                 override fun requestAsync() {
